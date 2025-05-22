@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return to Merchant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(30,41,59,0.85);
+            border-radius: 18px;
+            box-shadow: 0 8px 48px 0 rgba(0,255,255,0.13);
+            padding: 2rem 2.5rem 2rem 2.5rem;
+            text-align: center;
+        }
+        .btn {
+            background: linear-gradient(90deg, #00f2fe 0%, #4e54c8 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 1rem 2.7rem;
+            font-size: 1.18rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            box-shadow: 0 0 18px 0 #00f2fe66;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #4e54c8 0%, #00f2fe 100%);
+            box-shadow: 0 0 32px 0 #00f2fe99;
+            transform: translateY(-2px) scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pembayaran Berjaya!</h2>
+        <p>Terima kasih atas pembayaran anda.<br>Sila klik butang di bawah untuk teruskan ke WhatsApp dan selesaikan tempahan anda.</p>
+        <button class="btn" id="toWhatsapp">Return to Merchant (WhatsApp)</button>
+    </div>
+    <script>
+        // Dapatkan parameter dari URL
+        const params = new URLSearchParams(window.location.search);
+        const nama = params.get('nama') || '';
+        const email = params.get('email') || '';
+        const telefon = params.get('telefon') || '';
+        const message = `Saya telah membuat pembayaran untuk 1 landing page perniagaan saya. Nama: ${nama}, Email: ${email}, No Telefon: ${telefon}`;
+        const whatsappUrl = `https://wa.me/60134769332?text=${encodeURIComponent(message)}`;
+
+        document.getElementById('toWhatsapp').onclick = function() {
+            window.location.href = whatsappUrl;
+        };
+    </script>
+</body>
+</html>
