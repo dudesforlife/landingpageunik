@@ -238,21 +238,21 @@
             window.location.href = `${paymentUrl}?returnurl=${successUrl}&callbackurl=${failureUrl}`;
         };
 
-        // On page load, check for payment result in URL
-        window.onload = function() {
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('bayar') === 'berjaya') {
-                // Payment success, redirect to WhatsApp with prefilled message
-                const nama = params.get('nama') || '';
-                const email = params.get('email') || '';
-                const telefon = params.get('telefon') || '';
-                const message = `Saya telah membuat pembayaran untuk 1 landing page perniagaan saya. Nama: ${nama}, Email: ${email}, No Telefon: ${telefon}`;
-                const whatsappUrl = `https://wa.me/6?text=${encodeURIComponent(message)}`;
-                window.location.href = whatsappUrl;
-            } else if (params.get('bayar') === 'gagal') {
-                // Payment failed, stay on page (no action)
-            }
-        };
+       // On page load, check for payment result in URL
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('bayar') === 'berjaya') {
+        // Payment success, redirect to WhatsApp with prefilled message
+        const nama = params.get('nama') || '';
+        const email = params.get('email') || '';
+        const telefon = params.get('telefon') || '';
+        const message = `Saya telah membuat pembayaran untuk 1 landing page perniagaan saya. Nama: ${nama}, Email: ${email}, No Telefon: ${telefon}`;
+        const whatsappUrl = `https://wa.me/60134769332?text=${encodeURIComponent(message)}`;
+        window.location.href = whatsappUrl;
+    } else if (params.get('bayar') === 'gagal') {
+        // Payment failed, stay on page (no action)
+    }
+};
     </script>
 </body>
 </html>
