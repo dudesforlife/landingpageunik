@@ -3,135 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Unik untuk Perniagaan Anda!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>Return to Merchant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
             background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
-            color: #e0e7ef;
-            overflow-x: hidden;
-        }
-        .futuristic-bg {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .futuristic-bg::before, .futuristic-bg::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(70px);
-            opacity: 0.4;
-        }
-        .futuristic-bg::before {
-            width: 400px; height: 400px;
-            left: -120px; top: -120px;
-            background: radial-gradient(circle, #00f2fe 0%, #4e54c8 100%);
-            animation: float1 7s ease-in-out infinite alternate;
-        }
-        .futuristic-bg::after {
-            width: 350px; height: 350px;
-            right: -100px; bottom: -100px;
-            background: radial-gradient(circle, #43e97b 0%, #38f9d7 100%);
-            animation: float2 8s ease-in-out infinite alternate;
-        }
-        @keyframes float1 { 0%{transform:translateY(0);} 100%{transform:translateY(40px);} }
-        @keyframes float2 { 0%{transform:translateY(0);} 100%{transform:translateY(-30px);} }
-
-        .container {
-            position: relative;
-            max-width: 430px;
-            margin: 70px auto 0 auto;
-            background: rgba(30, 41, 59, 0.85);
-            border-radius: 24px;
-            box-shadow: 0 8px 48px 0 rgba(0,255,255,0.13), 0 2px 20px 0 rgba(80,0,255,0.12);
-            padding: 2.5rem 2rem 2.2rem 2rem;
-            text-align: center;
-            backdrop-filter: blur(8px);
-            border: 1.5px solid rgba(0,255,255,0.11);
-            z-index: 2;
-        }
-        h1 {
-            font-family: 'Orbitron', 'Montserrat', Arial, sans-serif;
-            font-size: 2.25rem;
-            margin-bottom: 0.6rem;
-            background: linear-gradient(90deg, #4e54c8 0%, #00f2fe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            letter-spacing: 1.5px;
-        }
-        h2 {
-            font-size: 1.12rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: #c8d6e5;
-        }
-        .benefits {
-            margin-bottom: 2.1rem;
-            text-align: left;
-            padding-left: 0;
-        }
-        .benefits li {
-            margin-bottom: 0.7rem;
-            font-size: 1.04rem;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            color: #a5f3fc;
-        }
-        .benefits li i {
-            margin-right: 0.7em;
-            color: #00f2fe;
-            font-size: 1.15em;
-        }
-        .notification {
-            background: rgba(0,242,254,0.12);
-            color: #00f2fe;
-            padding: 0.85rem 1rem;
-            border-radius: 13px;
-            margin-bottom: 1.2rem;
-            font-size: 1.04rem;
-            font-weight: 600;
-            box-shadow: 0 2px 10px 0 rgba(0,255,255,0.08);
-            border: 1px solid rgba(0,242,254,0.16);
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.7em;
+            flex-direction: column;
         }
-        .notification i {
-            color: #43e97b;
-            font-size: 1.25em;
+        .container {
+            background: rgba(30,41,59,0.85);
+            border-radius: 18px;
+            box-shadow: 0 8px 48px 0 rgba(0,255,255,0.13);
+            padding: 2rem 2.5rem 2rem 2.5rem;
+            text-align: center;
         }
-        .order-form {
-            margin-bottom: 1.5rem;
-        }
-        .order-form input {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1.1rem;
-            border: 1.5px solid #4e54c8;
-            border-radius: 9px;
-            font-size: 1.07rem;
-            background: rgba(255,255,255,0.07);
-            color: #e0e7ef;
-            transition: border 0.2s, box-shadow 0.2s;
-            outline: none;
-        }
-        .order-form input:focus {
-            border: 1.5px solid #00f2fe;
-            box-shadow: 0 0 6px 0 #00f2fe99;
-            background: rgba(0,242,254,0.04);
-        }
-        .order-btn {
+        .btn {
             background: linear-gradient(90deg, #00f2fe 0%, #4e54c8 100%);
             color: #fff;
             border: none;
@@ -140,119 +32,35 @@
             font-size: 1.18rem;
             font-weight: 700;
             cursor: pointer;
+            margin-top: 1.5rem;
             box-shadow: 0 0 18px 0 #00f2fe66;
             transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 8px #4e54c888;
-            position: relative;
         }
-        .order-btn::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 10px;
-            box-shadow: 0 0 16px 4px #00f2fe88;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .order-btn:hover {
+        .btn:hover {
             background: linear-gradient(90deg, #4e54c8 0%, #00f2fe 100%);
             box-shadow: 0 0 32px 0 #00f2fe99;
             transform: translateY(-2px) scale(1.03);
-        }
-        .order-btn:hover::after {
-            opacity: 1;
-        }
-        #formError {
-            color: #ff4e6a;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-            display: none;
-        }
-        .footer {
-            margin-top: 2.5rem;
-            color: #6c757d;
-            font-size: 0.98rem;
-            text-align: center;
-            z-index: 2;
-            position: relative;
-        }
-        @media (max-width: 600px) {
-            .container { padding: 1.3rem 0.7rem 1.1rem 0.7rem; }
-            h1 { font-size: 1.38rem; }
-            .benefits li { font-size: 0.99rem; }
-            .order-btn { font-size: 1rem; padding: 0.8rem 1.2rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Landing Page Unik Untuk Perniagaan Anda</h1>
-        <h2>Tingkatkan kredibiliti & tarik lebih ramai pelanggan dengan landing page profesional yang siap dalam masa singkat!</h2>
-        <ul class="benefits">
-            <li><i class="fa-solid fa-rocket"></i> Rekaan moden, responsif & mesra pengguna</li>
-            <li><i class="fa-solid fa-bolt"></i> Siap cepat, harga berpatutan</li>
-            <li><i class="fa-solid fa-users"></i> Sesuai untuk semua jenis bisnes & personal branding</li>
-            <li><i class="fa-solid fa-headset"></i> Support penuh & mudah untuk diurus</li>
-        </ul>
-        <div class="notification">
-            <i class="fa-brands fa-whatsapp"></i>
-            Kami akan contact anda melalui WhatsApp untuk maklumat lanjut mengenai pembinaan landing page anda.
-        </div>
-        <form class="order-form" id="orderForm">
-            <input type="text" id="nama" name="nama" placeholder="Nama anda" required />
-            <input type="email" id="email" name="email" placeholder="Email anda" required />
-            <input type="tel" id="telefon" name="telefon" placeholder="No Telefon anda" required />
-            <button type="submit" class="order-btn">Order Landing Page</button>
-        </form>
-        <div id="formError" style="color:#d90429;font-size:1rem;margin-bottom:0.8rem;display:none;"></div>
-    </div>
-    <div class="footer">
-        &copy; 2025 LandingPageUnik. Semua Hakcipta Terpelihara. By -Amanz
+        <h2>Pembayaran Berjaya!</h2>
+        <p>Terima kasih atas pembayaran anda. Sila klik butang di bawah untuk teruskan ke WhatsApp dan selesaikan tempahan anda.</p>
+        <button class="btn" id="toWhatsapp">Return to Merchant (WhatsApp)</button>
     </div>
     <script>
-        // ToyyibPay payment link
-        const paymentUrl = "https://dev.toyyibpay.com/landingpageunik";
-        // Success and failure redirect URLs (must be set in ToyyibPay bill settings)
-        // We'll use query params to pass info for WhatsApp redirect
-        const landingPageUrl = window.location.origin + window.location.pathname;
-
-        document.getElementById('orderForm').onsubmit = function(e) {
-            e.preventDefault();
-            const nama = document.getElementById('nama').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const telefon = document.getElementById('telefon').value.trim();
-            if (!nama || !email || !telefon) {
-                document.getElementById('formError').textContent = "Sila lengkapkan semua maklumat.";
-                document.getElementById('formError').style.display = 'block';
-                return;
-            }
-            document.getElementById('formError').style.display = 'none';
-
-            // Redirect to payment with return URLs
-            // ToyyibPay supports returnurl & callbackurl for redirection after payment
-            // We'll pass user info in query params (for WhatsApp redirect)
-            const successUrl = encodeURIComponent(`${landingPageUrl}?bayar=berjaya&nama=${encodeURIComponent(nama)}&email=${encodeURIComponent(email)}&telefon=${encodeURIComponent(telefon)}`);
-            const failureUrl = encodeURIComponent(`${landingPageUrl}?bayar=gagal`);
-            // Compose payment URL with returnurl (must be set in ToyyibPay bill settings to support this)
-            window.location.href = `${paymentUrl}?returnurl=${successUrl}&callbackurl=${failureUrl}`;
-        };
-
-       // On page load, check for payment result in URL
-window.onload = function() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('bayar') === 'berjaya') {
-        // Payment success, redirect to WhatsApp with prefilled message
+        // Dapatkan parameter dari URL
+        const params = new URLSearchParams(window.location.search);
         const nama = params.get('nama') || '';
         const email = params.get('email') || '';
         const telefon = params.get('telefon') || '';
         const message = `Saya telah membuat pembayaran untuk 1 landing page perniagaan saya. Nama: ${nama}, Email: ${email}, No Telefon: ${telefon}`;
         const whatsappUrl = `https://wa.me/60134769332?text=${encodeURIComponent(message)}`;
-        window.location.href = whatsappUrl;
-    } else if (params.get('bayar') === 'gagal') {
-        // Payment failed, stay on page (no action)
-    }
-};
+
+        document.getElementById('toWhatsapp').onclick = function() {
+            window.location.href = whatsappUrl;
+        };
     </script>
 </body>
 </html>
